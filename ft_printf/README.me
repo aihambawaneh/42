@@ -1,0 +1,50 @@
+*This project has been created as part of the 42 curriculum by aihambawaneh.*
+
+# ft_printf
+
+## Description
+
+`ft_printf` is a reimplementation of the standard C library function `printf`.
+The goal of this project is to gain a deep understanding of variadic functions,
+format parsing, and low-level output handling using only the `write` system call.
+
+This project supports multiple format specifiers and follows the same behavior
+as the original `printf` function for the mandatory part.
+
+---
+
+## Instructions
+
+### Compilation
+
+To compile the project, run:
+
+```bash
+make
+```
+This will generate a static library:
+
+libftprintf.a
+
+Remove object files and the library:
+
+make fclean
+
+
+Supported Format Specifiers :
+
+%c : character
+
+%s : string
+
+%d / %i : signed integer
+
+%u : unsigned integer
+
+%x : hexadecimal (lowercase)
+
+%X : hexadecimal (uppercase)
+
+%p : pointer address
+
+%% : percent sign
