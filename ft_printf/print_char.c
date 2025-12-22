@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_char.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sus <sus@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/01 00:00:00 by sus               #+#    #+#             */
+/*   Updated: 2025/01/01 00:00:00 by sus              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int print_char(va_list args)
+int	print_char(va_list args)
 {
-    char    c;
+	char	c;
 
-    c = (char)va_arg(args, int);
-    write(1, &c, 1);
-    return (1); 
+	c = (char)va_arg(args, int);
+	write(1, &c, 1);
+	return (1);
 }

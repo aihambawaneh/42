@@ -11,33 +11,29 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static int	print_number(long n)
+static int	print_hex_number(unsigned int n, char *base)
 {
 	int		count;
 	char	c;
 
 	count = 0;
-	if (n >= 10)
-		count += print_number(n / 10);
-	c = (n % 10) + '0';
+	if (n >= 16)
+		count += print_hex_number(n / 16, base);
+	c = base[n % 16];
 	write(1, &c, 1);
 	count++;
 	return (count);
 }
 
-int	print_int(va_list args)
+int	print_hex(va_list args, char format)
 {
-	long	n;
-	int		count;
+	unsigned int	n;
+	char			*base;
 
-	n = (long)va_arg(args, int);
-	count = 0;
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		count++;
-		n = -n;
-	}
-	count += print_number(n);
-	return (count);
+	n = va_arg(args, unsigned int);
+	if (format == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	return (print_hex_number(n, base));
 }
